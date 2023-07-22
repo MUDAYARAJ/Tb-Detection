@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Upload Image</title>
+
+
+</head>
+
+<body>
+
+  <div id="result" class="result">
+    <h2 style="font-size: medium;">Select to get Estimated Price</h2>
+  </div>
+
+  <script>
+    var estimted = document.getElementById("result");
+    fetch('http://127.0.0.1:5000/upload, {
+  method: 'POST',
+      body: formData
+})
+      .then(response => response.text())
+      .then(data => {
+        console.log(data);
+        estimted.innerHTML = "<h2>" + data.out + "</h2>"
+
+      })
+      .catch(error => {
+        console.error(error);
+      });
+
+
+  </script>
+</body>
+
+</html>
